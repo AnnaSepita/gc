@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar color="app">
+    <ion-title>
+      <div>
+          <div>
+
+            <div id="select">   <span class="search" id="search" > <ion-icon name="search" (click)="clicked()" title="Пошук"></ion-icon></span>
+              <ul>
+                <li (click)="op1()" id="cl0">Усі <ion-icon name="arrow-dropdown" id="dropdown"></ion-icon></li>
+                <li (click)="disactive()" id="cl1">Нові</li>
+                <li (click)="active()" id="cl2">Активні</li>
+                <li (click)="disactive()" id="cl3">Неактивні</li>
+              </ul>
+            </div>
+            <span class="find" id="find">
+          <form>
+            <nav>
+              <ion-icon name="arrow-back" (click)="back()" class="arrow-left"></ion-icon>
+             <input type="text" placeholder="Пошук" name="search" [(ngModel)]="filter" class="form-control">
+            </nav>
+          </form>
+          </span>
+          </div>
+      </div>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="content">
+  <div *ngFor="let user of users | orderBy: key : reverse | filter:filter; let i = index" [ngSwitch]="user.checked">
+    <ion-item *ngSwitchCase="true && false" id="all">
+      <ion-label>{{user.name}} {{user.surname}}</ion-label><ion-toggle checked="" [(ngModel)]="user.checked" class="toggle"></ion-toggle>
+    </ion-item>
+    <!-- <ion-list>
+         <ion-item *ngSwitchCase="false" id="newCont">
+             <ion-label>{{user.name}} {{user.surname}}<span style="float: right"><ion-toggle checked="" [(ngModel)]="user.checked"></ion-toggle></span></ion-label>
+         </ion-item>
+     </ion-list>  -->
+    <ion-item *ngSwitchCase="true" id="cht">
+      <ion-label>{{user.name}} {{user.surname}}</ion-label><ion-toggle checked="" [(ngModel)]="user.checked" class="toggle"></ion-toggle>
+    </ion-item>
+    <ion-item *ngSwitchCase="false"  id="chf">
+      <ion-label>{{user.name}} {{user.surname}}</ion-label><ion-toggle checked="" [(ngModel)]="user.checked" class="toggle"></ion-toggle>
+    </ion-item>
+  </div>
+</ion-content>
+
+

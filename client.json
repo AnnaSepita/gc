@@ -1,0 +1,9 @@
+{
+"clientList":
+[
+	{firstName: "Нікіта",lastName: "Іванов", email: "ttt@fg.com"},
+	{firstName: "Яна",lastName: "Шевченко", email: "tt1@fg.com"},
+	{firstName: "Саша",lastName: "Нікітченко", email: "tt2@fg.com"},
+	{firstName: "Вікторія",lastName: "Морозюк", email: "tt3@fg.com"}
+]
+}

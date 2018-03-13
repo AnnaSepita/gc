@@ -1,0 +1,38 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="app">
+    <ion-title>Створити акаунт</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content  padding>
+	<ion-item>
+    <ion-label color="primary" floating>Ім'я</ion-label>
+    <ion-input type="text" [(ngModel)]="reg.fname"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" floating>Прізвище</ion-label>
+    <ion-input type="text" [(ngModel)]="reg.lname"></ion-input>
+  </ion-item>
+	
+ <ion-item>
+    <ion-label color="primary" floating>Email</ion-label>
+    <ion-input type="email" [(ngModel)]="reg.email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label color="primary" floating>Пароль</ion-label>
+    <ion-input type="password" [(ngModel)]="reg.password"></ion-input>
+  </ion-item>
+	
+  <button ion-button full (click)="regIn()">Створити акаунт</button>
+  <p id="button"><button ion-button clear (click)="login()">Є аккаунт? Вхід!</button></p>
+</ion-content>

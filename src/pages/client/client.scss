@@ -1,0 +1,62 @@
+page-client {
+
+}
+#select {
+  border-radius: 9px;
+  color: white;
+  background: ;
+  //background-color: #f8f8f8;
+}
+#cl1,#cl2,#cl3{
+  display: none;
+}
+.form-control{
+  color: black;
+}
+ul li{
+  text-decoration: none;
+}
+li{
+  display: block;
+}
+li:hover{
+  cursor: pointer;
+  color: white;
+  transition-delay: 3ms;
+}
+ion-content{
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.search{
+  float: right;
+  color: #f8f8f8;
+}
+.form-control{
+  padding-left: 20px;
+  border: 0;
+  border-radius: 8px;
+  transition: left 1s ease-out 1s;
+}
+.search:hover{
+  cursor: pointer;
+}
+.find{
+  padding-left: 20px;
+  display: none;
+}
+#find{
+  border: none;
+}
+input{
+  border: none;
+  color: #f8f8f8;
+  padding-left: 15px;
+}
+.arrow-left:hover{
+  color: black;
+  cursor: pointer;
+}
+.toggle{
+  float: right;
+}

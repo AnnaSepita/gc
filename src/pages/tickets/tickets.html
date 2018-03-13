@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar color="app">
+    <ion-title>
+        <div>
+          <ul>
+            <li (click)="op()">Усі <ion-icon name="arrow-dropdown" id="dropdown1"></ion-icon></li>
+            <span class="cl" id="cl">
+              <li>Нові</li>
+              <li>У процесі</li>
+              <li>Виконані</li>
+            </span>
+          </ul>
+        </div>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <div *ngFor="let user of users; let i = index">
+    <ion-card>
+      <ion-card-header>  <!-- <p >Today is {{today }}</p>  -->
+        Сповіщення
+        <div id="timer" style="float: right"><button (click)="subscribeTimer0()" style="background-color: white">{{timer0button}} {{counter0}}</button></div>
+        <span style="float: right" id="right">Виправлено</span>
+      </ion-card-header>
+      <ion-card-content (swipe)="swipeEvent($event)">
+        <p class="outer-content" id="outer">
+          <ion-card>
+            <ion-item>
+              <ion-label >Час</ion-label>
+              <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" [(ngModel)]="event"></ion-datetime>
+            </ion-item>
+            <ion-item>
+              <ion-label>Дата</ion-label>
+              <ion-datetime displayFormat="DD MMMM YYYY" pickerFormat="DD MMMM YYYY" [(ngModel)]="event" ></ion-datetime>
+            </ion-item>
+            <button ion-button (click)="add()" block>Зберегти</button>
+          </ion-card>
+        </p>
+        <p id="fixed">
+          <button ion-button color="secondary"  (click)="right()" >Виправлено</button>
+          <button ion-button color="danger" (click)="postpone()">Відстрочити</button>
+        </p>
+        <p >
+          {{user.name}} {{user.surname}} відмітив(-ла) пункт {{issuesS}}
+        </p>
+        <p>
+          <span>{{ d | date:"HH:mm"}}</span>
+          <span style="float: right">{{ d | date:"dd/MM/yy" }}</span>
+        </p>
+
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+
+
